@@ -1,0 +1,19 @@
+  oneToTwoArray: function(arrayData) {
+    let result = []
+    let arrayTemp = []
+    for (let i = 0; i < arrayData.length; ++i) {
+      if (i % 4 == 0) {
+        result = []
+        result.push(arrayData[i])
+        arrayTemp.push(category)
+      } else {
+        result.push(arrayData[i])
+      }
+    }
+    
+    return arrayTemp
+    //循环套循环实现多分页
+    this.setData({
+      hotCategory: categoryTemp
+    });
+  },
