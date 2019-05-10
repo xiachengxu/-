@@ -1,0 +1,33 @@
+轮播图小点样式自定义
+============================
+wxml
+============================
+  <swiper class='swiper-box-page' indicator-dots="true"">
+    <block wx:for="{{arrayData}}">
+      <swiper-item>
+        <view>content data</view>
+      </swiper-item>
+    </block>
+  </swiper>
+============================
+wxss
+============================
+.swiper-box-page {
+  height: 200rpx;
+}
+
+.swiper-box-page .wx-swiper-dot {
+  width: 15rpx;
+  height: 15rpx;
+  margin-left: 2rpx;
+  border-radius: 5rpx;
+  justify-content: space-between;
+  background: #f7f7f7;
+  opacity: 0.5;
+}
+
+.swiper-box-page .wx-swiper-dot-active {
+  width: 40rpx;
+  height: 15rpx;
+  background: #fff;
+}
