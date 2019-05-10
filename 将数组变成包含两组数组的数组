@@ -9,8 +9,7 @@
       } else {
         result.push(arrayData[i])
       }
-    }
-    
+    }    
     return arrayTemp
     //循环套循环实现多分页
   },
