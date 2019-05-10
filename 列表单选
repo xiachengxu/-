@@ -1,0 +1,21 @@
+列表单选
+在列表多线的js文件中修改或添加如下方法，然后修改点击事件
+
+重点是:
+for(let i = 0 ; i < repContent.length;i++){
+      repContent[i].selectIndex = false; //点击就赋相反的值
+    }
+    
+方法：
+  selectRadio: function(e) {
+    let index = e.currentTarget.dataset.selectindex; //当前点击元素的自定义数据，这个很关键
+    let repContent = this.data.radioContent; //取到data里的selectIndex
+    for(let i = 0 ; i < repContent.length;i++){
+      repContent[i].selectIndex = false; //点击就赋相反的值
+    }
+    repContent[index].selectIndex = !repContent[index].selectIndex; //点击就赋相反的值
+    console.log(index, repContent)
+    this.setData({
+      radioContent: repContent //将已改变属性的json数组更新
+    })
+  }
