@@ -1,1 +1,58 @@
 
+js文件
+
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    noSelect: '/assets/shop_cart_unc.png',
+    hasSelect: '/assets/shop_cart_sele.png',
+    repContent: [{ message: '广告内容'}, { message: '不友善内容'}, { message: '垃圾内容'}, { message: '违法违规内容'}, { message: '其他'}],
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  selectRepNew: function (e) {
+    let index = e.currentTarget.dataset.selectindex;  //当前点击元素的自定义数据，这个很关键
+    let repContent = this.data.repContent;    //取到data里的selectIndex
+    repContent[index].selectIndex = !repContent[index].selectIndex ;   //点击就赋相反的值
+    console.log(index,repContent)
+    this.setData({
+      repContent: repContent  //将已改变属性的json数组更新
+    })
+  }
+
+})
+
+wxml文件
+ <view class="sel-box">
+    <view wx:for="{{repContent}}" class="multi-selection">
+      <text>{{item.message}}</text>
+      <image src="{{item.selectIndex == true ? hasSelect : noSelect}}" class="multi-img" data-selectIndex="{{index}}" bindtap="selectRepNew" />
+    </view>
+  </view>
+  
+wxss文件
+.sel-box{
+  display: flex;
+  flex-direction: column;
+}
+.sel-box image{
+  height: 35rpx;
+  width: 35rpx;
+}
+.sel-box view{
+  padding: 15rpx 25rpx;
+  display: flex;
+  flex-direction: row;
+}
+.sel-box view text{
+  font-size: 28rpx;
+  flex: 1;
+}
