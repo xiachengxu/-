@@ -1,8 +1,9 @@
-  oneToTwoArray: function(arrayData) {
+  
+  oneToTwoArray: function(arrayData,n) {
     let result = []
     let arrayTemp = []
     for (let i = 0; i < arrayData.length; ++i) {
-      if (i % 4 == 0) {
+      if (i % n == 0) {
         result = []
         result.push(arrayData[i])
         arrayTemp.push(category)
