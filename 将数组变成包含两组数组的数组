@@ -13,7 +13,4 @@
     
     return arrayTemp
     //循环套循环实现多分页
-    this.setData({
-      hotCategory: categoryTemp
-    });
   },
